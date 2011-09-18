@@ -24,11 +24,12 @@ def triangle(a, b, c)
   # WRITE THIS CODE
   equ = compare(a, compare(b,c))
   if equ
-    return :equilateral
+    :equilateral
   elsif [a,b].include?(c) or [a,c].include?(b)
-    return :isosceles
+    :isosceles
+  else
+    :scalene
   end
-  :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
