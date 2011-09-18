@@ -22,6 +22,14 @@ def compare(a, b)
 end
 def triangle(a, b, c)
   # WRITE THIS CODE
+  sides = [a,b,c]
+  for side in sides
+    raise TriangleError,"No negative side." if side < 1
+    if not (a + b > c and b + c > a and a + c > b)
+      raise TriangleError, "Not a triangle"
+    end
+  end
+
   equ = compare(a, compare(b,c))
   if equ
     :equilateral
