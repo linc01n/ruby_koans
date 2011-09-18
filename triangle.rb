@@ -13,8 +13,22 @@
 # and
 #   about_triangle_project_2.rb
 #
+def compare(a, b)
+  if a == b
+    a
+  else
+    nil
+  end
+end
 def triangle(a, b, c)
   # WRITE THIS CODE
+  equ = compare(a, compare(b,c))
+  if equ
+    return :equilateral
+  elsif [a,b].include?(c) or [a,c].include?(b)
+    return :isosceles
+  end
+  :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
