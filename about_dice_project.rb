@@ -7,7 +7,6 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # end
 class DiceSet
   attr_accessor :values
-  @values = []
   def roll(num)
     @values = num.times.map{1+rand(6)}
   end
