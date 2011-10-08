@@ -24,14 +24,14 @@ class AboutMessagePassing < EdgeCase::Koan
     mc = MessageCatcher.new
 
     assert mc.send("caught?")
-    assert mc.send("caught" + __ )    # What do you need to add to the first string?
-    assert mc.send("CAUGHT?".____ )      # What would you need to do to the string?
+    assert mc.send("caught" + "?" )    # What do you need to add to the first string?
+    assert mc.send("CAUGHT?".downcase )      # What would you need to do to the string?
   end
 
   def test_send_with_underscores_will_also_send_messages
     mc = MessageCatcher.new
 
-    assert_equal __, mc.__send__(:caught?)
+    assert_equal true, mc.__send__(:caught?)
 
     # THINK ABOUT IT:
     #
